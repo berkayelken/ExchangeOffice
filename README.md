@@ -1,2 +1,2 @@
-# exchange_office
+# ExchangeOffice
 A case study is for some technologies...
