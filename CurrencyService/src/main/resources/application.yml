@@ -1,1 +1,7 @@
+open.exchage.rates.appid: b00531beb37e44a0b7993264040562d8
+
+spring.data.mongodb:
+  host: localhost
+  port: 27017
+  database: localdb
 
