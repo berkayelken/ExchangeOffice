@@ -20,17 +20,17 @@ import com.byelken.exchange.office.repository.CurrencyRatesRepository;
  * @file 		: CurrencyRatesService.java
  */
 @Service
-public class CurrencyRatesService
+class CurrencyRatesService
 {
 	@Autowired
 	private CurrencyRatesRepository currencyRepo;
 
-	public CurrencyRates create(CurrencyRates rate)
+	CurrencyRates create(CurrencyRates rate)
 	{
 		return currencyRepo.save(rate);
 	}
 
-	public CurrencyRates read(String date) throws NotFoundException
+	CurrencyRates read(String date) throws NotFoundException
 	{
 		String id = createId(date);
 		Optional<CurrencyRates> rates = currencyRepo.findById(id);
@@ -40,7 +40,7 @@ public class CurrencyRatesService
 		return rates.get();
 	}
 
-	public CurrencyRates update(String date, CurrencyRates rate) throws NotFoundException
+	CurrencyRates update(String date, CurrencyRates rate) throws NotFoundException
 	{
 		String id = createId(date);
 		Optional<CurrencyRates> rates = currencyRepo.findById(id);
@@ -50,7 +50,7 @@ public class CurrencyRatesService
 		return currencyRepo.save(rate);
 	}
 
-	public Map<String, String> delete(String date) throws NotFoundException
+	Map<String, String> delete(String date) throws NotFoundException
 	{
 		String id = createId(date);
 		if (!currencyRepo.findById(id).isPresent())
